@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -2355,33 +2355,33 @@ text_embedder = ModelManager().get_or_create_embedding_model(
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValidationError</span>                           Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[3], line 5</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> llm_model <span style="color: rgb(98,98,98)">=</span> os<span style="color: rgb(98,98,98)">.</span>environ[<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">GRAPHRAG_LLM_MODEL</span><span style="color: rgb(175,0,0)">"</span>]
-<span class="ansi-green-intense-fg ansi-bold">      3</span> embedding_model <span style="color: rgb(98,98,98)">=</span> os<span style="color: rgb(98,98,98)">.</span>environ[<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">GRAPHRAG_EMBEDDING_MODEL</span><span style="color: rgb(175,0,0)">"</span>]
-<span class="ansi-green-fg">----&gt; 5</span> chat_config <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">LanguageModelConfig</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">api_key</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">api_key</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">type</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">ModelType</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">OpenAIChat</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">model</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">llm_model</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">max_retries</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">20</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> <span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> chat_model <span style="color: rgb(98,98,98)">=</span> ModelManager()<span style="color: rgb(98,98,98)">.</span>get_or_create_chat_model(
-<span class="ansi-green-intense-fg ansi-bold">     12</span>     name<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">local_search</span><span style="color: rgb(175,0,0)">"</span>,
-<span class="ansi-green-intense-fg ansi-bold">     13</span>     model_type<span style="color: rgb(98,98,98)">=</span>ModelType<span style="color: rgb(98,98,98)">.</span>OpenAIChat,
-<span class="ansi-green-intense-fg ansi-bold">     14</span>     config<span style="color: rgb(98,98,98)">=</span>chat_config,
-<span class="ansi-green-intense-fg ansi-bold">     15</span> )
-<span class="ansi-green-intense-fg ansi-bold">     17</span> token_encoder <span style="color: rgb(98,98,98)">=</span> tiktoken<span style="color: rgb(98,98,98)">.</span>encoding_for_model(llm_model)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[3]</span><span class="ansi-green-fg">, line 5</span>
+<span class="ansi-green-fg">      2</span> llm_model = os.environ[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">GRAPHRAG_LLM_MODEL</span><span class="ansi-yellow-fg">"</span>]
+<span class="ansi-green-fg">      3</span> embedding_model = os.environ[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">GRAPHRAG_EMBEDDING_MODEL</span><span class="ansi-yellow-fg">"</span>]
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">5</span> chat_config = <span class="ansi-yellow-bg">LanguageModelConfig</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">      6</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">api_key</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">api_key</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      7</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">type</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">ModelType</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">OpenAIChat</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      8</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">model</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">llm_model</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      9</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">max_retries</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">20</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">     10</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     11</span> chat_model = ModelManager().get_or_create_chat_model(
+<span class="ansi-green-fg">     12</span>     name=<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">local_search</span><span class="ansi-yellow-fg">"</span>,
+<span class="ansi-green-fg">     13</span>     model_type=ModelType.OpenAIChat,
+<span class="ansi-green-fg">     14</span>     config=chat_config,
+<span class="ansi-green-fg">     15</span> )
+<span class="ansi-green-fg">     17</span> token_encoder = tiktoken.encoding_for_model(llm_model)
 
-File <span class="ansi-green-fg">~/.cache/pypoetry/virtualenvs/graphrag-F2jvqev7-py3.11/lib/python3.11/site-packages/pydantic/main.py:253</span>, in <span class="ansi-cyan-fg">BaseModel.__init__</span><span class="ansi-blue-fg">(self, **data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    251</span> <span style="color: rgb(95,135,135)"># `__tracebackhide__` tells pytest and some other tools to omit this function from tracebacks</span>
-<span class="ansi-green-intense-fg ansi-bold">    252</span> __tracebackhide__ <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
-<span class="ansi-green-fg">--&gt; 253</span> validated_self <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">__pydantic_validator__</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">validate_python</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">data</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">self_instance</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    254</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span> <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> validated_self:
-<span class="ansi-green-intense-fg ansi-bold">    255</span>     warnings<span style="color: rgb(98,98,98)">.</span>warn(
-<span class="ansi-green-intense-fg ansi-bold">    256</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">A custom validator is returning a value other than `self`.</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">'</span>
-<span class="ansi-green-intense-fg ansi-bold">    257</span>         <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Returning anything other than `self` from a top level model validator isn</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">t supported when validating via `__init__`.</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">"</span>
-<span class="ansi-green-intense-fg ansi-bold">    258</span>         <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">See the `model_validator` docs (https://docs.pydantic.dev/latest/concepts/validators/#model-validators) for more details.</span><span style="color: rgb(175,0,0)">'</span>,
-<span class="ansi-green-intense-fg ansi-bold">    259</span>         stacklevel<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">2</span>,
-<span class="ansi-green-intense-fg ansi-bold">    260</span>     )
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/.cache/pypoetry/virtualenvs/graphrag-F2jvqev7-py3.11/lib/python3.11/site-packages/pydantic/main.py:253</span>, in <span class="ansi-cyan-fg">BaseModel.__init__</span><span class="ansi-blue-fg">(self, **data)</span>
+<span class="ansi-green-fg">    251</span> <span style="color: rgb(95,135,135)"># `__tracebackhide__` tells pytest and some other tools to omit this function from tracebacks</span>
+<span class="ansi-green-fg">    252</span> __tracebackhide__ = <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">253</span> validated_self = <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">__pydantic_validator__</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">validate_python</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">data</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">self_instance</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    254</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span> <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> validated_self:
+<span class="ansi-green-fg">    255</span>     warnings.warn(
+<span class="ansi-green-fg">    256</span>         <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">A custom validator is returning a value other than `self`.</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span class="ansi-yellow-fg">'</span>
+<span class="ansi-green-fg">    257</span>         <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">Returning anything other than `self` from a top level model validator isn</span><span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">t supported when validating via `__init__`.</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span class="ansi-yellow-fg">"</span>
+<span class="ansi-green-fg">    258</span>         <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">See the `model_validator` docs (https://docs.pydantic.dev/latest/concepts/validators/#model-validators) for more details.</span><span class="ansi-yellow-fg">'</span>,
+<span class="ansi-green-fg">    259</span>         stacklevel=<span class="ansi-green-fg">2</span>,
+<span class="ansi-green-fg">    260</span>     )
 
 <span class="ansi-red-fg">ValidationError</span>: 1 validation error for LanguageModelConfig
   Value error, API Key is required for ModelType.OpenAIChat when using api_key authentication. Please rerun `graphrag init` and set the API_KEY. [type=value_error, input_value={'api_key': '', 'type': "...: '', 'max_retries': 20}, input_type=dict]
@@ -2532,27 +2532,26 @@ search = DRIFTSearch(
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[5], line 11</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> drift_params <span style="color: rgb(98,98,98)">=</span> DRIFTSearchConfig(
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     temperature<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0</span>,
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     max_tokens<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">12_000</span>,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>     n<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">1</span>,
-<span class="ansi-green-intense-fg ansi-bold">      8</span> )
-<span class="ansi-green-intense-fg ansi-bold">     10</span> context_builder <span style="color: rgb(98,98,98)">=</span> DRIFTSearchContextBuilder(
-<span class="ansi-green-fg">---&gt; 11</span>     model<span style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">chat_model</span>,
-<span class="ansi-green-intense-fg ansi-bold">     12</span>     text_embedder<span style="color: rgb(98,98,98)">=</span>text_embedder,
-<span class="ansi-green-intense-fg ansi-bold">     13</span>     entities<span style="color: rgb(98,98,98)">=</span>entities,
-<span class="ansi-green-intense-fg ansi-bold">     14</span>     relationships<span style="color: rgb(98,98,98)">=</span>relationships,
-<span class="ansi-green-intense-fg ansi-bold">     15</span>     reports<span style="color: rgb(98,98,98)">=</span>reports,
-<span class="ansi-green-intense-fg ansi-bold">     16</span>     entity_text_embeddings<span style="color: rgb(98,98,98)">=</span>description_embedding_store,
-<span class="ansi-green-intense-fg ansi-bold">     17</span>     text_units<span style="color: rgb(98,98,98)">=</span>text_units,
-<span class="ansi-green-intense-fg ansi-bold">     18</span>     token_encoder<span style="color: rgb(98,98,98)">=</span>token_encoder,
-<span class="ansi-green-intense-fg ansi-bold">     19</span>     config<span style="color: rgb(98,98,98)">=</span>drift_params,
-<span class="ansi-green-intense-fg ansi-bold">     20</span> )
-<span class="ansi-green-intense-fg ansi-bold">     22</span> search <span style="color: rgb(98,98,98)">=</span> DRIFTSearch(
-<span class="ansi-green-intense-fg ansi-bold">     23</span>     model<span style="color: rgb(98,98,98)">=</span>chat_model, context_builder<span style="color: rgb(98,98,98)">=</span>context_builder, token_encoder<span style="color: rgb(98,98,98)">=</span>token_encoder
-<span class="ansi-green-intense-fg ansi-bold">     24</span> )
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[5]</span><span class="ansi-green-fg">, line 11</span>
+<span class="ansi-green-fg">      1</span> drift_params = DRIFTSearchConfig(
+<span class="ansi-green-fg">      2</span>     temperature=<span class="ansi-green-fg">0</span>,
+<span class="ansi-green-fg">      3</span>     max_tokens=<span class="ansi-green-fg">12_000</span>,
+<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">      7</span>     n=<span class="ansi-green-fg">1</span>,
+<span class="ansi-green-fg">      8</span> )
+<span class="ansi-green-fg">     10</span> context_builder = DRIFTSearchContextBuilder(
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">11</span>     model=<span class="ansi-yellow-bg">chat_model</span>,
+<span class="ansi-green-fg">     12</span>     text_embedder=text_embedder,
+<span class="ansi-green-fg">     13</span>     entities=entities,
+<span class="ansi-green-fg">     14</span>     relationships=relationships,
+<span class="ansi-green-fg">     15</span>     reports=reports,
+<span class="ansi-green-fg">     16</span>     entity_text_embeddings=description_embedding_store,
+<span class="ansi-green-fg">     17</span>     text_units=text_units,
+<span class="ansi-green-fg">     18</span>     token_encoder=token_encoder,
+<span class="ansi-green-fg">     19</span>     config=drift_params,
+<span class="ansi-green-fg">     20</span> )
+<span class="ansi-green-fg">     22</span> search = DRIFTSearch(
+<span class="ansi-green-fg">     23</span>     model=chat_model, context_builder=context_builder, token_encoder=token_encoder
+<span class="ansi-green-fg">     24</span> )
 
 <span class="ansi-red-fg">NameError</span>: name 'chat_model' is not defined</pre>
 </div>
@@ -2596,8 +2595,8 @@ Cell <span class="ansi-green-fg">In[5], line 11</span>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[6], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> resp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">await</span> <span class="ansi-yellow-bg">search</span><span style="color: rgb(98,98,98)">.</span>search(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Who is agent Mercer?</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[6]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> resp = <span class="ansi-bold" style="color: rgb(0,135,0)">await</span> <span class="ansi-yellow-bg">search</span>.search(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">Who is agent Mercer?</span><span class="ansi-yellow-fg">"</span>)
 
 <span class="ansi-red-fg">NameError</span>: name 'search' is not defined</pre>
 </div>
@@ -2641,8 +2640,8 @@ Cell <span class="ansi-green-fg">In[6], line 1</span>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[7], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">resp</span><span style="color: rgb(98,98,98)">.</span>response
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[7]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">resp</span>.response
 
 <span class="ansi-red-fg">NameError</span>: name 'resp' is not defined</pre>
 </div>
@@ -2686,8 +2685,8 @@ Cell <span class="ansi-green-fg">In[7], line 1</span>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[8], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">resp</span><span style="color: rgb(98,98,98)">.</span>context_data)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[8]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">resp</span>.context_data)
 
 <span class="ansi-red-fg">NameError</span>: name 'resp' is not defined</pre>
 </div>
@@ -2799,7 +2798,7 @@ Cell <span class="ansi-green-fg">In[8], line 1</span>
       <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.footer", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="../../scripts/create_cookie_banner.js"></script>
       
